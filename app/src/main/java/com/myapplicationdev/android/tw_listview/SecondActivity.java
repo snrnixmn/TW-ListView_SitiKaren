@@ -13,7 +13,7 @@ public class SecondActivity extends AppCompatActivity {
 
     ListView lv;
     TextView tvYear;
-    ArrayList<module> year1, year2, year3;
+    ArrayList<module> years;
     ArrayAdapter aa;
 
 
@@ -30,41 +30,32 @@ public class SecondActivity extends AppCompatActivity {
         tvYear.setText(year);
 
         // Create a few moduke objects in given years array
-        year1 = new ArrayList<module>();
-        year1.add(new module("G101", false));
-        year1.add(new module("A113", false));
-        year1.add(new module("C105", true));
-
-        year2 = new ArrayList<module>();
-        year2.add(new module("C208", true));
-        year2.add(new module("C200", false));
-        year2.add(new module("C346", true));
-
-        year3 = new ArrayList<module>();
-        year3.add(new module("C347", true));
-        year3.add(new module("C349", true));
-        year3.add(new module("C300", false));
+        years = new ArrayList<module>();
 
         // Link this Activity object, the row.xml layout for
         //  each row and the year String array together
 
-        /*
         if (year == "year 1") {
-            aa = new ModuleAdapter(this, R.layout.row, year1);
+            years.add(new module("G101", false));
+            years.add(new module("A113", false));
+            years.add(new module("C105", true));
+            aa = new ModuleAdapter(this, R.layout.row, years);
             lv.setAdapter(aa);
         }
         else if (year == "year 2") {
-            aa = new ModuleAdapter(this, R.layout.row, year2);
+            years.add(new module("C208", true));
+            years.add(new module("C200", false));
+            years.add(new module("C346", true));
+            aa = new ModuleAdapter(this, R.layout.row, years);
             lv.setAdapter(aa);
         }
         else {
-            aa = new ModuleAdapter(this, R.layout.row, year3);
+            years.add(new module("C347", true));
+            years.add(new module("C349", true));
+            years.add(new module("C300", false));
+            aa = new ModuleAdapter(this, R.layout.row, years);
             lv.setAdapter(aa);
         }
-         */
-
-        aa = new ModuleAdapter(this, R.layout.row, year2);
-        lv.setAdapter(aa);
     }
 
 }
